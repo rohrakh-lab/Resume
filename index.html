@@ -6,7 +6,7 @@
 <title>Rakshith Kumar – Welcome to my home</title>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#f3efe6;--ink:#1d1d1f;--card:#fff;--red:#d7261e;--yellow:#f8c81c;
+:root{--bg:#f2faff;--ink:#1d1d1f;--card:#fff;--red:#d7261e;--yellow:#f8c81c;
 box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17181c;--ink:#f2f2f2;--card:#26282e}}
 :root[data-theme="dark"]{--bg:#17181c;--ink:#f2f2f2;--card:#26282e}
@@ -36,8 +36,39 @@ background-image:repeating-linear-gradient(90deg,#0000 0 60px,#0002 60px 62px)}
 .o .i{display:block;font-size:clamp(34px,8vw,68px);line-height:1;transition:transform .15s;filter:drop-shadow(0 4px 2px #0006)}
 .o:hover .i,.o:focus-visible .i{transform:scale(1.18) rotate(-4deg)}
 .o .t{display:inline-block;font-size:clamp(.62rem,1.8vw,.8rem);font-weight:700;background:#fff;color:#1d1d1f;border-radius:6px;padding:0 7px;box-shadow:0 2px 0 #0004;white-space:nowrap}
-.o.seen .t::after{content:" ✓"}
+.o.seen::after{content:"✓";position:absolute;top:-4px;right:-2px;width:20px;height:20px;border-radius:50%;background:#2f9e58;color:#fff;font-size:.8rem;font-weight:700;display:grid;place-items:center;box-shadow:0 2px 0 #0004}
 .o:focus-visible{outline:3px solid var(--yellow)}
+.o.deco{cursor:default}.o.deco:hover .i{transform:none}
+.big{font-size:1.6em}
+.pass{display:block;position:relative;width:1.7em;height:.85em;margin:.3em auto 0;background:#fff;border-radius:.08em;border-left:.35em solid #1b6fd1}
+.pass::before{content:"";position:absolute;right:.12em;top:.14em;bottom:.14em;width:.5em;background:repeating-linear-gradient(90deg,#222 0 .03em,#0000 .03em .07em)}
+.pass::after{content:"";position:absolute;left:.1em;top:.16em;width:.7em;height:.5em;background:repeating-linear-gradient(#0000 0 .08em,#999 .08em .11em)}
+.o.rumble .i{animation:rum .6s}.o.hop .i{animation:hp .6s}
+@keyframes rum{20%,60%{transform:translateX(-6px)}40%,80%{transform:translateX(6px)}100%{transform:none}}
+@keyframes hp{40%{transform:translateY(-26px) rotate(-6deg)}70%{transform:translateY(0)}85%{transform:translateY(-8px)}100%{transform:none}}
+.sky{background:linear-gradient(#6fbef2 0 58%,#bfe6ff 58% 100%)}
+.ground{background:linear-gradient(#63b25a 0 25%,#4c9849);clip-path:polygon(0 60%,100% 60%,100% 100%,0 100%)}
+.drive{background:#8d8f94;clip-path:polygon(18% 100%,82% 100%,66% 60%,34% 60%)}
+.trip{display:flex;align-items:flex-end;gap:.12em}
+.trip>span{display:block;line-height:1}
+.trip .pass{font-size:.75em;margin:0 0 .1em;transform:rotate(-8deg)}
+.o.go2 .big{animation:rum .6s}.o.go2 .bag{animation:hp .6s .15s}.o.go2 .pass{animation:hp .6s .3s}
+.hero.sit .lg{height:.3em}.hero.sit .in{transform:translateY(.28em)}
+.flash{position:absolute;inset:0;background:#fff;z-index:6;pointer-events:none;animation:fl .55s ease-out forwards}
+@keyframes fl{from{opacity:1}to{opacity:0}}
+.pol{position:absolute;left:14px;top:64px;z-index:4;background:#fff;color:#1d1d1f;padding:6px 6px 4px;text-align:center;font-size:.75rem;font-weight:700;box-shadow:0 4px 10px #0007;transform:rotate(-4deg);animation:pd .7s cubic-bezier(.3,1.4,.5,1)}
+@keyframes pd{from{transform:translateY(-120px) rotate(-14deg);opacity:0}}
+.pol .ph{background:#bfe3ff;padding:8px 14px 0}
+.mini{position:relative;width:1em;height:1.8em;font-size:34px;margin:0 auto}
+.mini .in{position:relative;width:100%;height:100%}.mini i{position:absolute;display:block}
+.nt{position:absolute;left:50%;top:0;font-style:normal;font-size:1.3rem;animation:nt 2s ease-out forwards;pointer-events:none}
+.nt.n2{animation-delay:.3s}.nt.n3{animation-delay:.6s}
+@keyframes nt{from{transform:translate(-50%,0);opacity:1}to{transform:translate(calc(-50% + 26px),-70px);opacity:0}}
+.o.kick .i{animation:bnc .7s}
+@keyframes bnc{30%{transform:translateY(-34px) rotate(180deg)}55%{transform:translateY(0)}75%{transform:translateY(-14px) rotate(320deg)}100%{transform:none}}
+.jersey{display:block;width:1.3em;height:1.35em;margin:.3em auto 0;background:#d81920;clip-path:polygon(0 18%,30% 0,38% 8%,62% 8%,70% 0,100% 18%,88% 42%,78% 36%,78% 100%,22% 100%,22% 36%,12% 42%);position:relative}
+.jersey::before{content:"";position:absolute;left:38%;top:8%;width:24%;height:14%;border-radius:0 0 50% 50%;background:#111}
+@media (prefers-reduced-motion:reduce){.pol,.nt,.o.kick .i,.o.rumble .i,.o.hop .i,.o.go2 .big,.o.go2 .bag,.o.go2 .pass{animation:none}}
 .cert{display:block;position:relative;width:1.7em;height:1.2em;margin:.45em auto 0;background:#fbf6e6;border:.09em solid #6b4423;
 box-shadow:0 .06em .12em #0007,inset 0 0 0 .04em #d9c48f;transform-origin:50% -.4em}
 .cert::before{content:"";position:absolute;left:50%;top:-.5em;width:.7em;height:.4em;transform:translateX(-50%);
@@ -52,7 +83,7 @@ background:repeating-linear-gradient(#0000 0 .07em,#8a7a55 .07em .1em)}
 .go{position:absolute;top:42%;background:var(--yellow);color:#1d1d1f;border:0;border-radius:10px;font:inherit;font-weight:700;padding:8px 12px;cursor:pointer;box-shadow:0 4px 0 #b08d0a;z-index:3}
 .go:focus-visible{outline:3px solid #fff}
 .go.l{left:8px}.go.r{right:8px}
-.hero{position:absolute;width:1em;height:1.8em;font-size:clamp(28px,6vw,46px);transform:translate(-50%,-100%);z-index:2;pointer-events:none;filter:drop-shadow(0 .1em .05em #0005)}
+.hero{position:absolute;width:1em;height:1.8em;font-size:clamp(28px,6vw,46px);transform:translate(-50%,-100%);z-index:2;pointer-events:none;filter:drop-shadow(0 0 .02em #000c) drop-shadow(0 .1em .05em #0005)}
 .hero .in{position:relative;width:100%;height:100%;transform-origin:50% 100%}
 .hero.left .in{transform:scaleX(-1)}
 .hero i{position:absolute;display:block}
@@ -69,7 +100,7 @@ background:repeating-linear-gradient(#0000 0 .07em,#8a7a55 .07em .1em)}
 @keyframes hop{from{transform:translateY(0)}to{transform:translateY(-.07em)}}
 @media (prefers-reduced-motion:reduce){.hero.walk .lg,.hero.walk .hd,.hero.walk .tr{animation:none}}
 .say{position:absolute;left:10px;right:10px;top:10px;background:#fff;color:#1d1d1f;border-radius:14px;padding:10px 14px;font-weight:500;z-index:3;box-shadow:0 3px 0 #0004}
-.intro{position:absolute;inset:0;z-index:5;background:#1d1d1fd9;color:#fff;display:grid;place-content:center;text-align:center;gap:12px;padding:20px}
+.intro{position:absolute;inset:0;z-index:5;background:linear-gradient(135deg,#1e90fff0,#14b8a6f0);color:#fff;display:grid;place-content:center;text-align:center;gap:12px;padding:20px}
 .intro h2{margin:0;font-size:clamp(1.4rem,5vw,2.2rem)}
 .intro p{margin:0;opacity:.85}
 button.b{font:inherit;font-weight:700;border:0;border-radius:10px;padding:12px 22px;cursor:pointer;background:var(--red);color:#fff;box-shadow:0 4px 0 #8f1712;justify-self:center}
@@ -103,17 +134,25 @@ button.b:focus-visible{outline:3px solid #fff;outline-offset:3px}
 (function(){
 var SK=["Strategic Planning & Execution","Program & Project Management","Cross-Functional Stakeholder Management","Market Research & Competitive Intelligence","Business Development & Partnerships","Financial Modelling & Forecasting","Process Improvement & Workflow Automation","Revenue & Growth Planning","Risk & Scenario Analysis","KPI Tracking & Performance Reporting","Client & Account Management","Negotiation"];
 var R=[
-{name:"Hall",wall:"#f1d9b5",floor:"#a06b3b",ceil:"#fff6e6",say:"Hi, this is my home. Come on in and look around.",
- o:[{x:38,y:72,ico:"🪞",tag:"Mirror",say:"That's me in the mirror. Rakshith Kumar, strategy person.",title:"About me",when:"Strategy & Program Management",
+{name:"Hall",wall:"#7dd3f0",floor:"#cfa46b",ceil:"#f0fbff",accent:"#1e90ff",say:"Hi, this is my home. Come on in and look around. The mailbox is right by the door.",
+ o:[{x:70,y:72,ico:"📷",cam:1,tag:"Camera",say:"Say cheese! Click. That's me in the photo, Rakshith Kumar, strategy person.",title:"About me",when:"Strategy & Program Management",
  html:"<p>Strategy professional with 2+ years in Founder's Office and business strategy roles. I drive market research, competitive intelligence, growth planning and cross-functional programs.</p><p>I run several workstreams end to end, from stakeholder alignment and planning to execution, tracking and reporting. I've built financial models, five-year revenue plans, automation workflows and partnerships.</p>"},
- {x:62,y:72,ico:"📬",tag:"Mailbox",say:"Want to say hi? This is the best way to reach me.",title:"Get in touch",when:"",
- html:"<ul><li><a href=\"mailto:rohrakh@gmail.com\">rohrakh@gmail.com</a></li><li><a href=\"tel:+918754619694\">+91 8754619694</a></li></ul>"}]},
-{name:"Living room",wall:"#33506f",floor:"#5a3d2b",ceil:"#dfe8f2",say:"This is the living room. It's where I switch off.",
- o:[{x:40,y:72,ico:"📺",tag:"TV",tv:1,say:"This is my TV, where I watch shows and movies. Succession is my favourite.",title:"Now playing: Succession",when:"My all-time favourite show",
- html:"<p>I watch a lot of shows and movies here. Succession is my favourite. A boardroom, a family and a lot of strategy, negotiation and power plays.</p><p>Same skills I use at work, only with much worse family dinners.</p>"},
- {x:66,y:52,ico:"<span class=\"cert\"><b></b></span>",tag:"Degrees",say:"My degrees hang framed on this wall.",title:"Education",when:"",
+ {x:26,y:72,ico:"📬",tag:"Mailbox",say:"Want to say hi? This is the best way to reach me.",title:"Get in touch",when:"",
+ html:"<ul><li><a href=\"mailto:rohrakh@gmail.com\">rohrakh@gmail.com</a></li><li><a href=\"tel:+918754619694\">+91 8754619694</a></li></ul>"},
+ {x:48,y:52,ico:"<span class=\"cert\"><b></b></span>",tag:"Degrees",say:"My degrees hang framed on this wall.",title:"Education",when:"",
  html:"<ul><li><b>MBA, Marketing & Strategy</b>, Indian Institute of Management (IIM), Bodh Gaya. 2022–2024.</li><li><b>B.E., Electronics & Communication Engineering</b>, Sri Krishna College of Technology, Coimbatore.</li></ul>"}]},
-{name:"Study",wall:"#3a7d63",floor:"#8a6a44",ceil:"#e5f2ea",say:"And this is the study, where the work happens.",
+{name:"Living room",wall:"#3ed6c4",floor:"#cfa46b",ceil:"#e6fcf9",accent:"#0fb5a6",say:"This is the living room. It's where I switch off.",
+ o:[{x:20,y:60,ico:"📺",tag:"TV",deco:1},
+ {x:20,y:80,ico:"🛋️",tag:"Couch",sit:1,say:"This is my TV, where I watch shows and movies, and this is my couch. Succession is my favourite.",title:"Now playing: Succession",when:"My all-time favourite show",
+ html:"<p>I watch a lot of shows and movies here. Succession is my favourite. A boardroom, a family and a lot of strategy, negotiation and power plays.</p><p>Same skills I use at work, only with much worse family dinners.</p>"},
+ {x:36,y:74,ico:"🔊",tag:"Audio",music:1,say:"This is my audio system, where I listen to music from all over the world.",title:"Music",when:"Avid global music explorer",
+ html:"<p>I'm an avid global music explorer. I love discovering sounds from different countries, languages and cultures, and this is where I listen.</p>"},
+ {x:52,y:76,ico:"⚽",tag:"Football",ball:1,say:"Football! I love this game.",title:"Football",when:"My love for the game",
+ html:"<p>Football is a big part of my life. Give me a match, a ball or a good debate about the game and I'm happy.</p>"},
+ {x:68,y:54,ico:"<span class=\"jersey\"></span>",tag:"Jersey",say:"That red jersey on the wall says it all. Manchester United is my club.",title:"Manchester United",when:"My club",
+ html:"<p>Manchester United is my club, and the red jersey hangs proudly on my wall.</p>"}
+ ]},
+{name:"Workplace",wall:"#7ddc8a",floor:"#cfa46b",ceil:"#f0fff2",accent:"#2fbf5b",say:"And this is my workplace, where the work happens.",
  o:[{x:32,y:72,ico:"💻",tag:"Desk",say:"This is where I work in all of these.",title:"The desk",when:"Core competencies",
  html:"<p>This is where I work in:</p><div class=\"chips\">"+SK.map(function(s){return "<span class=\"chip\">"+s+"</span>"}).join("")+"</div>"},
  {x:46,y:56,ico:"📋",tag:"Whiteboard",say:"The whiteboard is where I plan strategy at Capgen Global.",title:"Strategist, Founder's Office at Capgen Global",when:"Dec 2025 – May 2026 · Bengaluru",
@@ -121,7 +160,13 @@ var R=[
  {x:60,y:72,ico:"📚",tag:"Bookshelf",say:"My Sify years are on this shelf.",title:"Business Strategist at Sify Technologies Limited",when:"Jul 2024 – Jul 2025 · Chennai",
  html:"<ul><li>Led a company-wide strategy document: vision, mission and a five-year scale-up roadmap.</li><li>Benchmarked competitors and profiled companies for Sify Digital Services.</li><li>Designed a five-year revenue projection and growth model.</li><li>Researched network, cloud, digital apps, cybersecurity and applied AI for new growth areas.</li><li>Structured strategic partnerships and contributed to the Annual Operating Plan.</li><li>Used Porter's Five Forces to assess global expansion.</li><li>Owned account management for B2B IT services clients.</li></ul>"},
  {x:74,y:72,ico:"🗄️",tag:"Cabinet",say:"Where I keep my first research project.",title:"Market Research and Strategy Intern at Driver Logistics",when:"Mar 2023 – Jun 2023 · Coimbatore",
- html:"<ul><li>Ran primary logistics market research across Coimbatore and Tamil Nadu using a structured questionnaire.</li><li>Benchmarked competitors on positioning and service differentiation.</li><li>Applied STP and geographic segmentation to define customer clusters and growth opportunities.</li></ul>"}]}
+ html:"<ul><li>Ran primary logistics market research across Coimbatore and Tamil Nadu using a structured questionnaire.</li><li>Benchmarked competitors on positioning and service differentiation.</li><li>Applied STP and geographic segmentation to define customer clusters and growth opportunities.</li></ul>"}]},
+{name:"Outside",outside:1,accent:"#3aa0ff",say:"And out the back, in the open air, is where my trips begin.",
+ o:[{x:9,y:66,ico:"🌳",deco:1},{x:91,y:66,ico:"🌳",deco:1},{x:26,y:36,ico:"☁️",deco:1},{x:72,y:32,ico:"☀️",deco:1},
+ {x:38,y:86,hx:66,ico:"<span class=\"trip\"><span class=\"big\">🚗</span><span class=\"bag\">🧳</span><span class=\"pass\"></span></span>",trip:1,tag:"Car, bag and boarding pass",
+ say:"This is my car, my bag and my boarding pass, all ready for the next trip. I'm an avid traveller and an explorer of cultures, with around 17 countries visited, mostly in Europe.",
+ title:"Avid traveller",when:"Explorer of cultures · around 17 countries, mostly in Europe",
+ html:"<p>I'm an avid traveller and an explorer of cultures. I've travelled to around 17 countries, mostly in Europe, and I'm always looking for the next one.</p><p>I love learning how people live, from their languages and music to their everyday culture. That's what pulls me to each new place.</p>"}]}
 ];
 var view=document.getElementById('view'),room=document.getElementById('room'),say=document.getElementById('say'),
 panel=document.getElementById('panel'),count=document.getElementById('count'),intro=document.getElementById('intro'),
@@ -131,36 +176,55 @@ function mkHero(){hero=document.createElement('div');hero.className='hero';
   hero.innerHTML='<div class="in"><i class="hd"></i><i class="tr"></i><i class="lg"></i><i class="lg r"></i></div>';room.appendChild(hero)}
 function place(x,y){hx=x;hero.style.transition='none';hero.style.left=x+'%';hero.style.top=y+'%';void hero.offsetWidth}
 function moveTo(x,y,cb){
-  clearTimeout(wt);
+  clearTimeout(wt);hero.classList.remove('sit');
   var t=rm()?0:Math.max(.3,Math.abs(x-hx)/32);
   hero.classList.toggle('left',x<hx);
   if(!t){place(x,y);if(cb)cb();return}
-  hero.style.transition='left '+t+'s linear';hero.style.left=x+'%';hx=x;
+  hero.style.transition='left '+t+'s linear, top .3s';hero.style.left=x+'%';hero.style.top=y+'%';hx=x;
   hero.classList.add('walk');
   wt=setTimeout(function(){hero.classList.remove('walk');if(cb)cb()},t*1000);
 }
-R.forEach(function(r){total+=r.o.length});
+R.forEach(function(r){r.o.forEach(function(o){if(!o.deco)total++})});
+function flash(){
+  if(!rm()){var f=document.createElement('div');f.className='flash';view.appendChild(f);setTimeout(function(){f.remove()},600)}
+  var p=document.createElement('div');p.className='pol';
+  p.innerHTML='<div class="ph"><div class="mini"><div class="in"><i class="hd"></i><i class="tr"></i><i class="lg"></i><i class="lg r"></i></div></div></div><span>Rakshith</span>';
+  view.appendChild(p);setTimeout(function(){p.remove()},6000);
+}
+function notes(b){
+  b.insertAdjacentHTML('beforeend','<i class="nt">🎵</i><i class="nt n2">🎶</i><i class="nt n3">🎵</i>');
+  setTimeout(function(){b.querySelectorAll('.nt').forEach(function(n){n.remove()})},2700);
+}
 function upd(){count.textContent='Explored '+Object.keys(seen).length+' of '+total}
 function draw(i,sx){
   var r=R[i];cur=i;
-  view.style.setProperty('--wall',r.wall);view.style.setProperty('--floor',r.floor);view.style.setProperty('--ceil',r.ceil);
-  var h='<div class="f ceil"></div><div class="f floor"></div><div class="f wl"></div><div class="f wr"></div><div class="f bk"></div><div class="objs" id="objs"></div>';
+  view.style.setProperty('--wall',r.wall);view.style.setProperty('--floor',r.floor);view.style.setProperty('--ceil',r.ceil);panel.style.borderLeftColor=r.accent||'';
+  var h=(r.outside?'<div class="f sky"></div><div class="f ground"></div><div class="f drive"></div>':'<div class="f ceil"></div><div class="f floor"></div><div class="f wl"></div><div class="f wr"></div><div class="f bk"></div>')+'<div class="objs" id="objs"></div>';
   if(i>0)h+='<button class="go l" data-d="-1">◀ '+R[i-1].name+'</button>';
   if(i<R.length-1)h+='<button class="go r" data-d="1">'+R[i+1].name+' ▶</button>';
   room.innerHTML=h;
   var box=document.getElementById('objs');
   r.o.forEach(function(o,j){
-    var b=document.createElement('button');b.className='o';b.style.left=o.x+'%';b.style.top=o.y+'%';
+    var b=document.createElement(o.deco?'span':'button');b.className='o'+(o.deco?' deco':'');b.style.left=o.x+'%';b.style.top=o.y+'%';
     if(seen[i+'-'+j])b.classList.add('seen');
-    b.innerHTML='<span class="i" aria-hidden="true">'+o.ico+'</span><span class="t">'+o.tag+'</span>';
+    b.innerHTML='<span class="i" aria-hidden="true">'+o.ico+'</span>';if(!o.deco)b.setAttribute('aria-label',o.tag);
+    if(o.deco){box.appendChild(b);return}
     b.onclick=function(){
       if(busy)return;
       last=Date.now();say.textContent='Come, let me show you.';
-      moveTo(o.x,Y,function(){hero.classList.remove('left');reveal()});
+      moveTo(o.hx==null?o.x:o.hx,Y,function(){hero.classList.remove('left');act();reveal()});
+      function act(){
+        if(o.sit){hero.classList.add('sit');hero.style.top='80%';var tv=box.querySelector('.deco');if(tv)tv.classList.add('on')}
+        if(o.cam)flash();
+        if(o.music)notes(b);
+        if(o.trip){b.classList.add('go2');setTimeout(function(){b.classList.remove('go2')},1000)}
+        if(o.fx){b.classList.add(o.fx);setTimeout(function(){b.classList.remove(o.fx)},800)}
+        if(o.ball){b.classList.add('kick');setTimeout(function(){b.classList.remove('kick')},800)}
+      }
       function reveal(){
       say.textContent=o.say;
       panel.innerHTML='<h2>'+o.title+'</h2>'+(o.when?'<p class="when">'+o.when+'</p>':'')+o.html;
-      if(o.tv)b.classList.toggle('on');
+      
       seen[i+'-'+j]=1;b.classList.add('seen');upd();
       if(Object.keys(seen).length===total)say.textContent=o.say+' That was the whole house. Let\'s talk: rohrakh@gmail.com';
       }
